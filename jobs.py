@@ -1,7 +1,7 @@
 import pandas as pd 
 
 
-#data cleaning and checking for nulls to handle later 
+#data cleaning and checking for nulls to handle 
 def preprocess(df):
 
     df['minimum_qual_requirements']=df['minimum_qual_requirements'].fillna(' ')
