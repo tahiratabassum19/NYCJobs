@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import PyPDF2
 import re
 
-st.set_page_config(page_title="Job Search",page_icon='🔎',layout="wide")
+#st.set_page_config(page_title="Job Search",page_icon='🔎',layout="wide")
 
 def add_bg_from_url():
 
@@ -188,7 +188,17 @@ if selection=="Job Dashboard":
 
     
     #calling job filter function for bar chart 
-
+    st.markdown("""
+        <style>
+        .bar {
+        font-size:30px !important;
+        font-family:Sans-serif;
+        font-weight: Bold;
+        color: #1A0556
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    st.markdown('<p class="bar">Number of Job Open Positions by Agencies and Job Categories</p>', unsafe_allow_html=True)
     filtered=filtering_job_cat(df,"Bar Chart")
 
     agency_bar= filtered.groupby('agency')['number_of_positions'].sum().reset_index()
@@ -214,8 +224,7 @@ if selection=="Job Dashboard":
             tickfont=dict(size=20),
             )
     )
-
-
+    
     st.plotly_chart(fig_3)
 # when radio button resume cloud selected 
 # WordCloud for resume 
