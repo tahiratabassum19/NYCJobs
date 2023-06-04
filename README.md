@@ -7,12 +7,12 @@ This project will allow the user to search jobs in NYC based on different filter
 
 ## Tech Stacks 
 
-📊Matplotlib
-📊Pyplot
-✍️PyPDF2
-🔎Streamlit
-🐼Pandas
-🔠WordCloud
+- 📊Matplotlib
+- 📊Pyplot
+- ✍️PyPDF2
+- 🔎Streamlit
+- 🐼Pandas
+- 🔠WordCloud
 
 ## Data
 Live data comes from NYC Jobs data from NYC Open data
