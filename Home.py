@@ -5,12 +5,9 @@ import jobs
 import requests
 from PIL import Image
 import time
-import os
-from dotenv import load_dotenv
 
-load_dotenv()
 
-API_TOKEN=os.getenv("API_TOKEN")
+API_TOKEN=st.secrets["auth_token"]
 
 # API Calling 
 url = f"https://data.cityofnewyork.us/resource/kpav-sd4t.json?$$app_token={API_TOKEN}&$select=job_id,agency,number_of_positions,business_title,civil_service_title,job_category,career_level,salary_range_from,salary_range_to,salary_frequency,work_location,job_description,minimum_qual_requirements,work_location_1,posting_date,post_until&$limit=50000"
