@@ -170,6 +170,7 @@ if selection=="Job Dashboard":
             hoverlabel=dict(
             bgcolor="#F13557",
             font_size=20,
+            font_color="black",
             font_family="Rockwell")
          )
         

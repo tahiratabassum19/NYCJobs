@@ -5,11 +5,15 @@ import jobs
 import requests
 from PIL import Image
 import time
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+API_TOKEN=os.getenv("API_TOKEN")
 
 # API Calling 
-API_KEY ='76ee7p4cmyfe0bd14jv02m310'
-url = "https://data.cityofnewyork.us/resource/kpav-sd4t.json?$$app_token=VqqaMeCXwluae4iAUkvGyheal&$select=job_id,agency,number_of_positions,business_title,civil_service_title,job_category,career_level,salary_range_from,salary_range_to,salary_frequency,work_location,job_description,minimum_qual_requirements,work_location_1,posting_date,post_until&$limit=50000"
+url = f"https://data.cityofnewyork.us/resource/kpav-sd4t.json?$$app_token={API_TOKEN}&$select=job_id,agency,number_of_positions,business_title,civil_service_title,job_category,career_level,salary_range_from,salary_range_to,salary_frequency,work_location,job_description,minimum_qual_requirements,work_location_1,posting_date,post_until&$limit=50000"
 
 response=requests.get(url).json()
 df = pd.DataFrame(response)
@@ -36,13 +40,7 @@ def add_bg_from_url():
     )
 add_bg_from_url() 
 
-# hide_st_style= """
-#     <style>
-#     header {visibility: hidden;}
-#     footer {visibility:hidden;}
-#     </>style
-# """
-# st.markdown(hide_st_style, unsafe_allow_html=True)
+
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
