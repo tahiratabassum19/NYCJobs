@@ -5,7 +5,9 @@ This project will allow the user to search jobs in NYC based on different filter
 
 -----
 
-![Frontend View](./images/example.pn)
+![Frontend View](./Demo_1.png)
+![ ](./Demo_2.png)
+
 
 
 ## Tech Stacks 
